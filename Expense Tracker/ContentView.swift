@@ -10,31 +10,33 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage("isFirstTime") private var isFirstTime: Bool = true
+    // App Lock Properties
+    @AppStorage("isAppLockEnabled") private var isAppLockEnabled: Bool = false
+    @AppStorage("lockWhenAppGoesBackground") private var lockWhenAppGoesBackground: Bool = false
     
     @State private var activeTab: Tab = .recents
     
     var body: some View {
-        TabView(selection: $activeTab) {
-            Text("Recents")
-                .tag(Tab.recents)
-                .tabItem { Tab.recents.tabContent }
-            Text("Search")
-                .tabItem { Tab.search.tabContent }
-                .tag(Tab.search)
-            Text("Charts")
-                .tabItem { Tab.charts.tabContent }
-                .tag(Tab.charts)
-            Text("Settings")
-                .tabItem { Tab.settings.tabContent }
-                .tag(Tab.settings)
+        LockView(lockType: .biometric, lockPin: "", isEnabled: isAppLockEnabled, lockWhenAppGoesBackground: lockWhenAppGoesBackground) {
+            TabView(selection: $activeTab) {
+                Recents()
+                    .tag(Tab.recents)
+                    .tabItem { Tab.recents.tabContent }
+                Search()
+                    .tabItem { Tab.search.tabContent }
+                    .tag(Tab.search)
+                Graphs()
+                    .tabItem { Tab.charts.tabContent }
+                    .tag(Tab.charts)
+                Settings()
+                    .tabItem { Tab.settings.tabContent }
+                    .tag(Tab.settings)
+            }
+            .sheet(isPresented: $isFirstTime, content: {
+                IntroScreen()
+                    .interactiveDismissDisabled()
+            })
         }
-//        .onChange(of: activeTab) {
-//            print("Current time: \(activeTab.rawValue)")
-//        }
-        .sheet(isPresented: $isFirstTime, content: {
-            IntroScreen()
-                .interactiveDismissDisabled()
-        })
     }
 }
 

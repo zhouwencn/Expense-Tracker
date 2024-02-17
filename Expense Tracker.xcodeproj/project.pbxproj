@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10B9C552B7EFA220048C629 /* FilterTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C542B7EFA220048C629 /* FilterTransactionsView.swift */; };
 		E15572672B7C4CD8008F1D73 /* Expense_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15572662B7C4CD8008F1D73 /* Expense_TrackerApp.swift */; };
 		E15572692B7C4CD8008F1D73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15572682B7C4CD8008F1D73 /* ContentView.swift */; };
 		E155726B2B7C4CD9008F1D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E155726A2B7C4CD9008F1D73 /* Assets.xcassets */; };
@@ -28,10 +29,11 @@
 		E1A11FE92B7CF9070034637B /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A11FE82B7CF9070034637B /* SwipeAction.swift */; };
 		E1A11FEB2B7CFB710034637B /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A11FEA2B7CFB710034637B /* DateFilterView.swift */; };
 		E1A11FEF2B7DFEFE0034637B /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A11FEE2B7DFEFE0034637B /* LockView.swift */; };
-		E1A11FF32B7E14EE0034637B /* NewExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A11FF22B7E14EE0034637B /* NewExpenseView.swift */; };
+		E1A11FF32B7E14EE0034637B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A11FF22B7E14EE0034637B /* TransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10B9C542B7EFA220048C629 /* FilterTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTransactionsView.swift; sourceTree = "<group>"; };
 		E15572632B7C4CD8008F1D73 /* Expense Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expense Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15572662B7C4CD8008F1D73 /* Expense_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense_TrackerApp.swift; sourceTree = "<group>"; };
 		E15572682B7C4CD8008F1D73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		E1A11FE82B7CF9070034637B /* SwipeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
 		E1A11FEA2B7CFB710034637B /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
 		E1A11FEE2B7DFEFE0034637B /* LockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
-		E1A11FF22B7E14EE0034637B /* NewExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseView.swift; sourceTree = "<group>"; };
+		E1A11FF22B7E14EE0034637B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +125,7 @@
 				E1A11FE32B7CA8CB0034637B /* Helpers */,
 				E1A11FD62B7C8C210034637B /* TabViews */,
 				E1A11FC92B7C61500034637B /* IntroScreen.swift */,
-				E1A11FF22B7E14EE0034637B /* NewExpenseView.swift */,
+				E1A11FF22B7E14EE0034637B /* TransactionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +159,7 @@
 				E1A11FE42B7CA8F30034637B /* CardView.swift */,
 				E1A11FE62B7CE4930034637B /* TransactionCardView.swift */,
 				E1A11FEA2B7CFB710034637B /* DateFilterView.swift */,
+				E10B9C542B7EFA220048C629 /* FilterTransactionsView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -239,7 +242,7 @@
 				E1A11FE52B7CA8F30034637B /* CardView.swift in Sources */,
 				E1A11FE92B7CF9070034637B /* SwipeAction.swift in Sources */,
 				E1A11FD82B7C8C390034637B /* Recents.swift in Sources */,
-				E1A11FF32B7E14EE0034637B /* NewExpenseView.swift in Sources */,
+				E1A11FF32B7E14EE0034637B /* TransactionView.swift in Sources */,
 				E1A11FD32B7C89AE0034637B /* Transaction.swift in Sources */,
 				E15572692B7C4CD8008F1D73 /* ContentView.swift in Sources */,
 				E1A11FDA2B7C8C430034637B /* Settings.swift in Sources */,
@@ -249,6 +252,7 @@
 				E1A11FEF2B7DFEFE0034637B /* LockView.swift in Sources */,
 				E15572672B7C4CD8008F1D73 /* Expense_TrackerApp.swift in Sources */,
 				E1A11FCC2B7C67820034637B /* Constants.swift in Sources */,
+				E10B9C552B7EFA220048C629 /* FilterTransactionsView.swift in Sources */,
 				E1A11FD12B7C89990034637B /* Category.swift in Sources */,
 				E1A11FE72B7CE4930034637B /* TransactionCardView.swift in Sources */,
 			);

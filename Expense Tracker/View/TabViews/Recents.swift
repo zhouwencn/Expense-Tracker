@@ -36,21 +36,23 @@ struct Recents: View {
                             })
                             .hSpacing(.leading)
                             
-                            /// Card View
-                            CardView(income: 2000, expense: 3000.55)
-                            
-                            // 自定义控制
-                            CustomSegmentedControl()
-                                .padding(.bottom, 10)
-                            
-                            ForEach(transactions) { transaction in
-                                NavigationLink {
-                                    NewExpenseView(editTransaction: transaction)
-                                } label: {
-                                    // TransactionCardView
-                                    TransactionCardView(transaction: transaction)
+                            FilterTransactionsView(startDate: startDate, endDate: endDate) { transactions in
+                                /// Card View
+                                CardView(
+                                    income: total(transactions, category: .income),
+                                    expense: total(transactions, category: .expense)
+                                )
+                                
+                                // 自定义控制
+                                CustomSegmentedControl()
+                                    .padding(.bottom, 10)
+                                
+                                ForEach(transactions.filter({$0.category == selectedCategory.rawValue})) { transaction in
+                                    NavigationLink(value: transaction) {
+                                        TransactionCardView(transaction: transaction)
+                                    }
+                                    .buttonStyle(.plain)
                                 }
-                                .buttonStyle(.plain)
                             }
                         } header: {
                             // 上面固定的头部
@@ -62,6 +64,9 @@ struct Recents: View {
                 .background(.gray.opacity(0.15))
                 .blur(radius: showFilterView ? 8 : 0)
                 .disabled(showFilterView)
+                .navigationDestination(for: Transaction.self) { transation in
+                    TransactionView(editTransaction: transation)
+                }
             }
             .overlay {
                 /// 点击日期弹出日控件
@@ -103,7 +108,7 @@ struct Recents: View {
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             
             NavigationLink {
-                NewExpenseView()
+                TransactionView()
             } label: {
                 Image(systemName: "plus")
                     .font(.title3)
